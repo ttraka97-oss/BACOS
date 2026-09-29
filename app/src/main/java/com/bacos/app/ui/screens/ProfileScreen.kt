@@ -205,6 +205,8 @@ private fun WeeklyChart(sessions: List<SessionEntity>, modifier: Modifier = Modi
     val maxMinutes = maxOf(sessions.maxOfOrNull { it.minutes } ?: 1, 1)
     val labels = listOf("س", "ح", "ن", "ث", "ر", "خ", "ج") // أيام الأسبوع من السبت
 
+    val activeColor = Bacos.c.accent
+    val dimColor = Bacos.c.accent.copy(alpha = 0.35f)
     Column(modifier) {
         Canvas(
             Modifier
@@ -217,7 +219,7 @@ private fun WeeklyChart(sessions: List<SessionEntity>, modifier: Modifier = Modi
                 val minutes = sessions.filter { it.day == day.toString() }.sumOf { it.minutes }
                 val h = (minutes.toFloat() / maxMinutes) * (size.height - 20f)
                 drawRoundRect(
-                    color = if (i == 6) Bacos.c.accent else Bacos.c.accent.copy(alpha = 0.35f),
+                    color = if (i == 6) activeColor else dimColor,
                     topLeft = androidx.compose.ui.geometry.Offset(
                         gap * i + (gap - barWidth) / 2f,
                         size.height - h

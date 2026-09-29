@@ -53,6 +53,7 @@ fun ReadinessRing(
         label = "readiness"
     )
 
+    val trackColor = Bacos.c.surface3
     Box(modifier = modifier.size(size.dp), contentAlignment = Alignment.Center) {
         Canvas(Modifier.fillMaxSize()) {
             val stroke = size * 0.055f
@@ -62,7 +63,7 @@ fun ReadinessRing(
 
             // Track
             drawArc(
-                color = Bacos.c.surface3,
+                color = trackColor,
                 startAngle = 0f,
                 sweepAngle = 360f,
                 useCenter = false,
