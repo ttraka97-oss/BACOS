@@ -352,4 +352,3 @@ private fun SubjectRow(name: String, score: Int, color: Color) {
     }
 }
 
-private fun Int.dp = androidx.compose.ui.unit.Dp(this.toFloat())
