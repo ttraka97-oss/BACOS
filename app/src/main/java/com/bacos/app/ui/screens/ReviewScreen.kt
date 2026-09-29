@@ -31,7 +31,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.style.TextAlign
@@ -113,7 +112,7 @@ fun ReviewScreen(db: AppDb, nav: NavHostController) {
         }
         if (quality < 3) againCount += 1 else goodCount += 1
         done += 1
-        view.performHapticFeedback(HapticFeedbackType.LongPress)
+        view.performHapticFeedback(android.view.HapticFeedbackConstants.LONG_PRESS)
         offsetX = 0f
         flipped = false
         if (index < queue.size - 1) index += 1 else {

@@ -114,5 +114,6 @@ fun BacosTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable 
 }
 
 object Bacos {
-    val c: BacosColors get() = LocalBacosColors.current
+    val c: BacosColors
+        @Composable get() = LocalBacosColors.current
 }

@@ -27,6 +27,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
@@ -34,7 +35,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -120,7 +120,7 @@ fun QuizScreen(db: AppDb, nav: NavHostController, subject: String, count: Int) {
         results.add(isCorrect)
         if (isCorrect) {
             correctCount += 1
-            view.performHapticFeedback(HapticFeedbackType.LongPress)
+            view.performHapticFeedback(android.view.HapticFeedbackConstants.LONG_PRESS)
         } else {
             scope.launch {
                 db.mistakeDao().insert(

@@ -146,7 +146,7 @@ fun OnboardingScreen(db: AppDb, onDone: () -> Unit) {
                         Text("باش نقسمو الجلسات على قدك", style = Body, color = Bacos.c.textSecondary)
                         Spacer(Modifier.height(Spacing.xxl))
                         listOf(30, 60, 90, 120).forEach { m ->
-                            TimeOption(m, selected = minutes == m) { minutes = it }
+                            TimeOption(m, selected = minutes == m) { minutes = m }
                             Spacer(Modifier.height(Spacing.md))
                         }
                     }

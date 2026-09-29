@@ -169,11 +169,11 @@ fun ProfileScreen(db: AppDb, nav: NavHostController) {
         SectionHeader("الإنجازات")
         val totalQ = questionStats.first
         val achievements = listOf(
-            "🔥 أسبوع كامل" to (profile?.streak ?: 0) >= 7,
-            "⚡ شهر دراسي" to sessions.size >= 30,
-            "🎯 100 سؤال" to totalQ >= 100,
-            "🧠 500 سؤال" to totalQ >= 500,
-            "📈 جاهز للباك" to readiness >= 85,
+            "🔥 أسبوع كامل" to ((profile?.streak ?: 0) >= 7),
+            "⚡ شهر دراسي" to (sessions.size >= 30),
+            "🎯 100 سؤال" to (totalQ >= 100),
+            "🧠 500 سؤال" to (totalQ >= 500),
+            "📈 جاهز للباك" to (readiness >= 85),
         )
         achievements.forEach { (name, unlocked) ->
             Row(

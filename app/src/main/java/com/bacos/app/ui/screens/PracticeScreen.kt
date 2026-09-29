@@ -21,6 +21,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.bacos.app.data.db.AppDb
 import com.bacos.app.ui.Routes
@@ -113,7 +114,7 @@ private fun PracticeCard(title: String, subtitle: String, value: String, enabled
         ) {
             Column(Modifier.weight(1f)) {
                 Text(title, style = BodyMedium, color = if (enabled) Bacos.c.textPrimary else Bacos.c.textTertiary)
-                Spacer(Modifier.height(2))
+                Spacer(Modifier.height(2.dp))
                 Text(subtitle, style = Caption, color = Bacos.c.textTertiary)
             }
             Text(value, style = Numbers, color = if (enabled) Bacos.c.accent else Bacos.c.textTertiary)
