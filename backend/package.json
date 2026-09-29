@@ -1,0 +1,13 @@
+{
+  "name": "bacos-backend",
+  "version": "1.0.0",
+  "description": "BACOS backend — auth, sync and AI proxy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0",
+    "pg": "^8.11.5"
+  }
+}
